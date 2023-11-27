@@ -1,0 +1,25 @@
+.wrapper{
+    position: relative; 
+    /* color: burlywood; */
+    top: 14%;
+    margin-bottom: 10rem;
+    width: 100vw;
+    height: 100vh;
+}
+
+.landing{
+    background: #000;
+    width: 90vw;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0 auto;
+}
+
+.landing p{
+    margin-left: 20px;
+    margin-right: 20px;
+}

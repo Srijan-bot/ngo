@@ -1,0 +1,110 @@
+
+   <!-- Header Section -->
+{% extends "base.html" %}
+ <!-- Main Section -->
+ {% load static %}
+ {% block css %} 
+ <link rel="stylesheet" href="{% static 'aim.css' %}" />
+ <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+ <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet"> 
+ <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+ {% endblock css %}
+ {% block title %}HOME{% endblock title %}
+ {% block body %}
+ <main class="main">
+    <section class="section banner banner-section">
+       <div class="container banner-column">
+        {% load static %}
+          <img class="banner-image" src="{% static 'images/group.png' %}" alt="banner">
+          <div class="banner-inner">
+             <h1 class="heading-xl">Experience <span class="span-land">event</span> Like Never Before</h1>
+             <p class="paragraph">
+                Experience top-notch events with seamless planning, exquisite details, and premium execution for unforgettable moments.
+             </p>
+             <button class="btn btn-darken btn-inline">
+                Explore Now<i class="bx bx-right-arrow-alt"></i>
+             </button>
+          </div>
+          <div class="banner-links">
+             <a href="#" title=""><i class="fab fa-facebook"></i></a>
+             <a href="#" title=""><i class="fab fa-instagram"></i> </a>
+             <a href="#" title=""> <i class="fab fa-twitter"></i></a>
+             <a href="#" title=""> <i class="fab fa-youtube"></i></a>
+          </div>
+       </div>
+    </section>
+ </main>
+
+ <div class="card-main">
+   <h1>OUR AIM</h1>
+     {% for servs in servs %}
+      <div class="card">
+         <div class="image">
+            <img src="/media/{{servs.image}}" alt="{{ service.name }}">
+         </div>
+         <div class="content">
+            <a href="#">
+            <span class="title">
+               {{servs.name}}
+            </span>
+            </a>
+      
+            <p class="desc">
+            {{servs.desc}} 
+            </p>
+      
+            <a class="action" href="#">
+            Find out more
+            <span aria-hidden="true">
+               →
+            </span>
+            </a>
+         </div>
+      </div>
+     {% endfor %}
+ </div>
+ <section class="mission-section">
+   <div class="container">
+       <h1>Our Mission</h1>
+       <p class="intro">Empowering communities for a brighter future</p>
+       <p class="description">
+           We believe in making a positive impact on the world by addressing critical social and environmental issues. Through collaborative efforts and community engagement, we strive to create lasting change and improve the lives of those in need.
+       </p>
+       <div class="quote">
+           <blockquote>
+               "Together, we can build a world where every individual has the opportunity to thrive and reach their full potential."
+           </blockquote>
+       </div>
+       <div class="cta">
+           {% comment %} <a href="#get-involved" class="btn">Get Involved</a>
+            {% endcomment %}
+            <a href="{% url 'contri' %}" class="btn" id="openForm">Get Involved</a>
+       </div>
+   </div>
+</section>
+
+<section class="faq">
+   <div class="container">
+      <h1>FAQ</h1>
+    
+      
+         {% comment %} <h2>Frequently Asked Questions</h2> {% endcomment %}
+         {% for faq in faq %}
+         <div class="accordion">
+            <div class="accordion-item">
+              <button  aria-expanded="false"><span class="accordion-title">{{faq.name}}</span><span class="icon" aria-hidden="true"></span></button>
+              <div class="accordion-content">
+                <p>{{faq.desc}}</p>
+              </div>
+            </div>
+           
+         {% endfor %}
+        
+      
+   </div>
+ </section>
+ {% endblock body %}
+ {% block js %}
+ {% load static %}
+ <script src="{% static 'acc.js' %}"></script>
+ {% endblock js %}

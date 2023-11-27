@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'index.css' %}" />
+    <link rel="stylesheet" href="{% static 'nav.css' %}" />
+    {% block css %}{% endblock css %}
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+    <title>{% block title %}{% endblock title %}</title>
+  </head>
+  <body>
+    <header class="header" id="header">
+      <nav class="navbar container">
+        <a href="#" class="brand">Brand</a>
+        <div class="burger" id="burger">
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+        </div>
+        <div class="menu" id="menu">
+          <ul class="menu-inner">
+            <li class="menu-item"><a href="{% url 'home' %}" class="menu-link">Home</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">Services</a></li>
+            <li class="menu-item"><a href="{% url 'about' %}" class="menu-link">About</a></li>
+            <li class="menu-item"><a href="{% url 'contri' %}" class="menu-link">Join</a></li>
+          </ul>
+        </div>
+        <a href="#" class="menu-block">Inquire</a>
+      </nav>
+    </header>
+
+
+
+    {% block body %}
+    {% endblock body %}
+
+
+    
+    <footer class="site-footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12 col-md-6">
+              <h6>About</h6>
+              <p class="text-justify">EventXYZ.com <i>EXPERIENCE WANTS TO BE MEMORABLE </i> is a dedicated platform for hosting extraordinary events. EventXYZ specializes in curating seamless experiences, offering a spectrum of event services to ensure every occasion is unforgettable. Our expertise spans event planning and execution in diverse domains, including corporate gatherings, weddings, conferences, product launches, and more. We strive to simplify the event-hosting process, providing comprehensive solutions to make your vision a reality. With a focus on delivering excellence, EventXYZ is your partner in creating memories that last a lifetime.</p>
+            </div>
+  
+          
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8 col-sm-6 col-xs-12">
+              <p class="copyright-text">Copyright &copy; 2023 All Rights Reserved by 
+           <a href="#">Srijan-bot</a>.
+              </p>
+            </div>
+  
+            <div class="col-md-4 col-sm-6 col-xs-12">
+              <ul class="social-icons">
+                <li><a class="facebook" href="#"><i class="fab fa-facebook"></i></a></li>
+                <li><a class="twitter" href="#"><i class="fab fa-instagram"></i></a></li>
+                <li><a class="dribbble" href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a class="linkedin" href="#"><i class="fab fa-youtube"></i></a></li>   
+              </ul>
+            </div>
+          </div>
+        </div>
+  </footer>
+    <script src="{% static 'nav.js' %}"></script>
+    {% block js %}{% endblock js %}
+  </body>
+</html>

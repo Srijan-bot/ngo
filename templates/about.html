@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block css %}
+{% load static %}
+<link rel="stylesheet" href="{% static "about.css" %}">
+{% endblock css %}
+
+{% block title %}ABOUT{% endblock title %}
+
+{% block body %}
+<div class="wrapper">
+    {% comment %} <h1>Hello</h1> {% endcomment %}
+    <div class="landing">
+        <h1>About US</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non cupiditate, voluptatem cumque at dolorum sit dicta, voluptate maxime excepturi, asperiores illum perspiciatis! Eos perferendis commodi sequi sint dolorem ullam distinctio.</p>
+    </div>
+    
+</div>
+{% endblock body %}
